@@ -30,11 +30,11 @@ const $: any = jQuery;
 @Component({})
 export default class Modal extends Vue {
   @Prop()
-  private header: string;
+  private header!: string;
   @Prop()
-  private content: string;
+  private content!: string;
   @Prop()
-  private icon: string;
+  private icon!: string;
   private modal: any;
 
   public open() {

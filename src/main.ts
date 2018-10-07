@@ -43,7 +43,7 @@ const app = new Vue({
       this.toggleState();
     },
   },
-  render: h => h(App),
+  render: (h) => h(App),
 }).$mount('#app');
 
 $(document).ready(() => {
