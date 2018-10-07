@@ -1,40 +1,40 @@
 <template>
   <div class="ui three column divided grid">
     <div class="row">
-      <div class="sixteen wide column">
+      <div class="center aligned sixteen wide column">
         {{msg}}
       </div>
     </div>
     <div class="row">
-      <div class="column">
+      <div class="center aligned column">
         <p><i class="arrow right icon"></i></p>
       </div>
-      <div class="column">
+      <div class="center aligned column">
         <p><i class="arrow right icon"></i></p>
       </div>
-      <div class="column">
+      <div class="center aligned column">
         <p><i class="arrow down icon"></i></p>
       </div>
     </div>
     <div class="row">
-      <div class="column">
+      <div class="center aligned column">
         <p><i class="arrow up icon"></i></p>
       </div>
-      <div class="column">
+      <div class="center aligned column">
         <p><i class="recycle icon"></i></p>
       </div>
-      <div class="column">
+      <div class="center aligned column">
         <p><i class="arrow down icon"></i></p>
       </div>
     </div>
     <div class="row">
-      <div class="column">
+      <div class="center aligned column">
         <p><i class="arrow up icon"></i></p>
       </div>
-      <div class="column">
+      <div class="center aligned column">
         <p><i class="arrow left icon"></i></p>
       </div>
-      <div class="column">
+      <div class="center aligned column">
         <p><i class="arrow left icon"></i></p>
       </div>
     </div>
