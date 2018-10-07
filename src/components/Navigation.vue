@@ -18,7 +18,7 @@
       </div>
 
       <modal icon="sign-out" header="Logout" :content="modalContent"
-            ref="modal" @modal-approve="logoutAction" @modal-deny="noop"></modal>
+            ref="modal" @modal-approve="logoutAction"></modal>
     </div>
 </template>
 
@@ -52,9 +52,6 @@ export default class Navigation extends Vue {
   }
   private logoutDialog() {
     (this.$refs.modal as Modal).open();
-  }
-  private noop() {
-    (this.$refs.modal as Modal).close();
   }
 }
 </script>
