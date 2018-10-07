@@ -1,29 +1,32 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <div class="ui fixed inverted borderless menu">
+      <navigation></navigation>
     </div>
-    <router-view/>
+    <div class="ui main text container">
+      <router-view/>
+    </div>
   </div>
 </template>
 
 <style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+.ui.menu .item img.logo {
+  margin-right: 1.5em;
 }
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+.main.container {
+  margin-top: 7em;
 }
 </style>
+
+<script lang="ts">
+import Vue from 'vue';
+import Component from 'vue-class-component';
+import Navigation from '@/components/Navigation.vue';
+
+@Component({
+  components: {
+    Navigation,
+  },
+})
+export default class App extends Vue {}
+</script>
