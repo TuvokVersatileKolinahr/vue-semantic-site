@@ -13,17 +13,20 @@ const router = new Router({
     {
       path: '/',
       name: 'home',
+      meta: { authenticated: false },
       component: Home,
     },
     {
       path: '/login',
       name: 'login',
+      meta: { authenticated: false },
       component: () =>
         import(/* webpackChunkName: "login" */ '@/views/Login.vue'),
     },
     {
       path: '/about',
       name: 'about',
+      meta: { yollo: false },
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
@@ -34,8 +37,25 @@ const router = new Router({
 });
 
 router.beforeEach((to, from, next) => {
-  if (to.name !== 'login' && !store.getters['login/authenticated']) {
-    next({ name: 'login' });
+  if (
+    to.matched.some((record) => {
+      if (Object.keys(record.meta).length > 0) {
+        if (record.meta.authenticated === false) {
+          return false;
+        } else {
+          return true;
+        }
+      } else {
+        // If there is no meta record
+        return true;
+      }
+    })
+  ) {
+    if (!store.getters['login/authenticated']) {
+      next({ name: 'login', params: { redirect: to.fullPath } });
+    } else {
+      next();
+    }
   } else {
     next();
   }

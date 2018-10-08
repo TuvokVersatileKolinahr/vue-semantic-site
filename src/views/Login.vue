@@ -54,7 +54,8 @@ const $: any = jQuery;
 export default class Login extends Vue {
   private mounted() {
     if (this.$route.query.email && this.$route.query.password) {
-      this.$store.commit('login/initializeAuth');
+      const redirectRoute = this.$route.params;
+      this.$store.commit('login/initializeAuth', redirectRoute);
     }
     $('.ui.form').form({
       fields: {
