@@ -22,6 +22,12 @@ const router = new Router({
         import(/* webpackChunkName: "login" */ '@/views/Login.vue'),
     },
     {
+      path: '/profile',
+      name: 'profile',
+      component: () =>
+        import(/* webpackChunkName: "profile" */ '@/views/Profile.vue'),
+    },
+    {
       path: '/about',
       name: 'about',
       // route level code-splitting
