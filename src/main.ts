@@ -7,8 +7,8 @@ import store from '@/store/store';
 
 import JQuery from 'jquery';
 
-import '../semantic/dist/semantic.min.css';
-import '../semantic/dist/semantic.min.js';
+import '@/assets/semantic/semantic.min.css';
+import '@/assets/semantic/semantic.min.js';
 
 import App from './App.vue';
 
