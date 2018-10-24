@@ -10,6 +10,6 @@ module.exports = {
         ]
     },
 
-    baseUrl: '',
+    baseUrl: 'vue-semantic-site/',
 
 }
