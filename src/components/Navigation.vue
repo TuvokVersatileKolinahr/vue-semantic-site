@@ -8,6 +8,7 @@
         <i class="cog icon"></i> <i class="caret down icon"></i>
         <div class="ui borderless menu">
           <router-link to="about" class="item">About</router-link>
+          <router-link to="profile" class="item">Profile</router-link>
           <div @click="logoutDialog" class="item">Logout</div>
         </div>
       </div>
@@ -24,7 +25,7 @@
 
 <style lang="scss" scoped>
 .title {
-  margin-left: 1.5em;
+    margin-left: 1.5em;
 }
 </style>
 
@@ -35,23 +36,23 @@ import Component from 'vue-class-component';
 import Modal from '@/components/Modal.vue';
 
 @Component({
-  computed: {
-    ...mapState('login', ['authenticated']),
-  },
-  methods: {
-    ...mapMutations('login', {
-      logout: 'logout,',
-    }),
-  },
-  components: { Modal },
+    computed: {
+        ...mapState('login', ['authenticated']),
+    },
+    methods: {
+        ...mapMutations('login', {
+            logout: 'logout,',
+        }),
+    },
+    components: { Modal },
 })
 export default class Navigation extends Vue {
-  private modalContent: string = 'Really log out?';
-  private logoutAction() {
-    this.$store.commit('login/logout');
-  }
-  private logoutDialog() {
-    (this.$refs.modal as Modal).open();
-  }
+    private modalContent: string = 'Really log out?';
+    private logoutAction() {
+        this.$store.commit('login/logout');
+    }
+    private logoutDialog() {
+        (this.$refs.modal as Modal).open();
+    }
 }
 </script>
