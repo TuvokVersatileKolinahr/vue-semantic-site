@@ -14,7 +14,7 @@
     },
     "dependencies": {
         "jquery": "^3.3.1",
-        "semantic-ui": "^2.4.0",
+        "semantic-ui": "^2.4.2",
         "vue": "^2.5.17",
         "vue-class-component": "^6.2.0",
         "vue-property-decorator": "^7.2.0",
